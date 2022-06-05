@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BookkeepingBook.SiteMaster"%>
+
+<!DOCTYPE html>
+
+<html lang="zh">
+
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的记账本应用程序</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class=" navbar-fixed-top">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">记账本</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="display: none" id="user"><a href="#"><span class="glyphicon glyphicon-user"></span>用户姓名</a></li>
+                        <li id="loginIn"><a href="Views/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>登录</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="background-color: white;height:500px">
+                    <div class="col-md-3">
+                        <asp:TreeView ID="TreeView2" runat="server" DataSourceID="SiteMapDataSourcel" ImageSet="WindowsHelp">
+                            <HoverNodeStyle Font-Underline="True" ForeColor="#6666AA" />
+                            <NodeStyle Font-Names="Tahoma" Font-Size="20pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="1px" />
+                            <ParentNodeStyle Font-Bold="False" />
+                            <SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" HorizontalPadding="0px" VerticalPadding="0px" />
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource ID="SiteMapDataSourcel" runat="server" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="background-color: white;">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - 我的 记账本应用程序</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
+<script>
+
+    $(function () {
+
+        //计算统计概览
+/*        var sum = $("#sum").text();
+        var out = $("#out").text();
+
+        var balance = sum - out;
+        console.log(sum)
+        console.log(out)
+
+        $("#balance").text(balance);
+*/
+
+
+        //$("#user").toggle();
+        //$("#loginIn").toggle();
+    });
+</script>
+

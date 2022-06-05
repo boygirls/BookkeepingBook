@@ -1,0 +1,24 @@
+﻿<%--
+默认的外观模板。以下外观仅作为示例提供。
+
+1. 命名的控件外观。SkinId 的定义应唯一，因为在同一主题中不允许一个控件类型有重复的 SkinId。
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. 默认外观。未定义 SkinId。在同一主题中每个控件类型只允许有一个默认的控件外观。
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:GridView runat="server" class="table table-striped table-hover"></asp:GridView>
+
+<asp:Button runat="server" class="btn btn-success"/>
+
+<asp:TreeView runat="server"  ImageSet="XPFileExplorer" NodeIndent="15">
+    <HoverNodeStyle Font-Underline="True" ForeColor="#6666AA" />
+    <NodeStyle Font-Names="Tahoma" Font-Size="20pt" ForeColor="Black" HorizontalPadding="2px" NodeSpacing="0px" VerticalPadding="2px" />
+    <ParentNodeStyle Font-Bold="False" />
+    <SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" HorizontalPadding="0px" VerticalPadding="0px" />
+</asp:TreeView>
+

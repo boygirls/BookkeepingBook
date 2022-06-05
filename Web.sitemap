@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="首页"  description="Default">
+    <siteMapNode url="~/Views/Summary" title="统计概述"  description="Summary" />
+    <siteMapNode url="~/Views/Add" title="记一笔"  description="Add" />
+    <siteMapNode url="~/Views/search" title="查询某月的所有记录"  description="search" />
+    <siteMapNode url="~/Views/delete" title="删除记录"  description="delete" />
+    <siteMapNode url="~/Views/changeTheme" title="更改主题"  description="changeTheme" />
+    <siteMapNode url="~/Views/Login" title="退出登录"  description="login" />
+  </siteMapNode>
+
+</siteMap>

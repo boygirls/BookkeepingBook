@@ -1,0 +1,10 @@
+﻿body {
+}
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: green;
+    border-color: forestgreen;
+}
+
+
